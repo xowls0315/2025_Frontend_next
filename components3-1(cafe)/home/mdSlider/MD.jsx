@@ -5,7 +5,7 @@ import Image from "next/image";
 const MD = ({ imageSrc, title, subtitle }) => {
   return (
     <div className="flex flex-col gap-1 px-6 md:px-0 w-full md:w-auto">
-      <div className="w-full md:w-[220px] aspect-square">
+      <div className="relative w-full md:w-[220px] aspect-square">
         <Image
           fill
           className="object-cover rounded-lg"

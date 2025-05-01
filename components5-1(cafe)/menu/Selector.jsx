@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Container from "../common/layout/Container";
 
-const Selector = () => {
-  const [selected, setSelected] = useState("커피");
-  const handleChange = (v) => setSelected((prev) => v);
+const Selector = ({ selected, setSelected }) => {
   const menus = ["커피", "맥주", "와인"];
   const selectedCss = "border-b-2 border-slate-700";
 
@@ -14,10 +11,11 @@ const Selector = () => {
       <Container className="flex">
         {menus.map((v) => (
           <div
-            onClick={() => handleChange(v)}
+            key={v}
+            onClick={() => setSelected(v)}
             className={`${
-              selected == v && selectedCss
-            } flex-1 py-5 h-full text-center font-bold`}
+              selected === v ? selectedCss : ""
+            } flex-1 py-5 h-full text-center font-bold cursor-pointer`}
           >
             {v}
           </div>

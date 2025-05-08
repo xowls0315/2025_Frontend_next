@@ -59,7 +59,7 @@ const KakaoMap = () => {
       markerRef.current = new kakao.maps.Marker({
         position: markerPosition,
       });
-      markerRef.current.setMap(markerRef.current);
+      markerRef.current.setMap(mapRef.current);
     }
   }, [loc]);
 
